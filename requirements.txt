@@ -1,0 +1,23 @@
+fastapi>=0.104.1
+uvicorn>=0.24.0
+pydantic>=2.5.0
+httpx>=0.25.1
+chromadb>=0.4.21
+sentence-transformers>=2.2.2
+datasets>=2.14.6
+
+# ── Tier 3: LoRA neural classifier ───────────────────────────────────────────
+# If you cannot install these (no GPU / low RAM), set LORA_ENABLED=false
+# in your environment and the system falls back to the two-tier pipeline.
+transformers>=4.43.0
+peft>=0.11.0
+accelerate>=0.30.0
+# Install the torch variant that matches your hardware:
+#   CPU only  : pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   CUDA 12.1 : pip install torch --index-url https://download.pytorch.org/whl/cu121
+torch
+
+streamlit>=1.35.0
+requests>=2.31.0
+pandas>=2.0.0
+plotly>=5.18.0

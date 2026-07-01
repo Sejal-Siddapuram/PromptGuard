@@ -1,0 +1,50 @@
+What is prompt injection?
+Explain prompt injection in simple terms.
+How does prompt injection work?
+Describe prompt injection as a cybersecurity concept.
+Why is prompt injection important in AI security?
+Give an educational overview of prompt injection.
+What are common types of prompt injection attacks?
+How can developers defend against prompt injection?
+What is the difference between direct and indirect prompt injection?
+Explain prompt injection detection techniques.
+What is prompt extraction?
+Explain prompt extraction in simple terms.
+How does prompt extraction work?
+Describe prompt extraction as a cybersecurity concept.
+Why is prompt extraction a security risk?
+How can systems prevent prompt extraction?
+What is a system prompt?
+Why should system prompts be protected?
+Explain LLM security to a beginner.
+What are the main security risks for large language models?
+Explain AI red teaming.
+What is adversarial testing for language models?
+How do security teams test chatbots safely?
+Describe responsible AI security research.
+What is a jailbreak attack in AI security?
+Explain jailbreak detection without providing attack instructions.
+How can developers prevent LLM jailbreaks?
+What are guardrails in generative AI?
+Explain semantic detection for prompt attacks.
+How does a prompt-injection classifier work?
+What is cosine similarity in semantic search?
+Explain vector databases for cybersecurity students.
+How can embeddings help detect malicious prompts?
+What is similarity-weighted voting?
+Explain false positives in security classifiers.
+How do precision and recall apply to prompt-injection detection?
+Why is calibration important for an AI security classifier?
+What is the OWASP Top 10 for large language model applications?
+Summarize best practices for securing an LLM application.
+How should applications handle untrusted instructions in documents?
+Explain the principle of least privilege.
+What is zero-trust security?
+What is a security operations center?
+Explain SIEM systems.
+What is the MITRE ATT&CK framework?
+What is an API key and how should it be protected?
+Explain why secrets should not be stored in source code.
+How should environment variables containing credentials be secured?
+What is data exfiltration?
+Explain social engineering as a security concept.

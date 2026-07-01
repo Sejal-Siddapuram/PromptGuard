@@ -1,0 +1,10 @@
+chroma_db/
+logs/
+__pycache__/
+detectors/__pycache__/
+tests/__pycache__/
+*.pyc
+.env
+login_hf.py
+uvicorn_stdout.log
+uvicorn_stderr.log

@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  fastapi:
+    build: .
+    container_name: promptguard
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_URL=http://ollama:11434/api/generate
+    depends_on:
+      - ollama
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - hf_cache:/root/.cache/huggingface
+
+  dashboard:
+    image: python:3.11-slim
+    container_name: promptguard_dashboard
+    working_dir: /app
+    volumes:
+      - ./dashboard.py:/app/dashboard.py
+      - ./requirements_dashboard.txt:/app/requirements_dashboard.txt
+    ports:
+      - "8501:8501"
+    environment:
+      - FASTAPI_URL=http://fastapi:8000
+    depends_on:
+      - fastapi
+    command: bash -c "pip install --no-cache-dir -r /app/requirements_dashboard.txt && streamlit run /app/dashboard.py --server.port 8501 --server.address 0.0.0.0 --server.headless true --browser.gatherUsageStats false"
+
+volumes:
+  ollama_data:
+  hf_cache:
