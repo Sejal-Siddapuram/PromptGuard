@@ -19,6 +19,7 @@ OLLAMA_URL   = os.environ.get("OLLAMA_URL",   "http://localhost:11434/api/genera
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:0.5b")
 
 guard_active = True
+app.state.guard_active = True
 
 
 class ChatRequest(BaseModel):
@@ -40,6 +41,8 @@ def append_log(entry: dict):
 def toggle(data: ToggleRequest):
     global guard_active
     guard_active = data.enabled
+    app.state.guard_active = guard_active
+
     return {
         "protection_enabled": guard_active,
         "message": f"Protection is now {'ENABLED' if guard_active else 'DISABLED'}"
