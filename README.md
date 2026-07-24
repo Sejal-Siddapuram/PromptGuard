@@ -2,7 +2,6 @@
 
 A multi-layer prompt injection detection system built around LLM-integrated pipelines. Sits in front of an LLM (Ollama) and intercepts adversarial inputs before they reach the model.
 
-Built as part of a research internship at the PESU Innovation Lab, in collaboration with Akamai Technologies.
 
 ---
 
